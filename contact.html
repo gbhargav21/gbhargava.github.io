@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>RAC HINDUSTAN UNIVERSITY</title>
+    <style>
+        .active a {
+            color: #156fe6 !important;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light shadow-sm  fixed-top" style="background:#f4f9f9">
+        <a class="navbar-brand" href="index.html"><img src="img/nav-img.png"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span><i class="fas fa-bars" style="color: black; font-size: 30px; border:white; background: white;"></i></span></button>
+        <span class="collapse-bg"></span>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <ul class="navbar-nav ml-auto ">
+                <li class="nav-item ">
+                    <a class="nav-link " href="index.html">Home</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="events.html">Events</a>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="family.html">Family</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="contact.html">Contact US</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+        <div class="text-center ">
+            <h1 class="contact-h">Have any questions?</h1>
+            <h2>Contact us via e-mail or phone</h2>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2>Reach Us</h2>
+                <h5>Address: <small class="text-muted">Main Block,Hindustan Institute of Technology and Science,Padur,Kachipuram,Tamilnadu</small></h5>
+                <h5>Email: <small class="text-muted">rachindustanuniversity@gmail.com</small></h5>
+                <h5>Contact: <small class="text-muted">+91 77777 88888 || +91 99999 55555</small></h5>
+                <p><iframe frameborder="0" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3748.056322801222!2d80.22737854100414!3d12.800107615255843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a5250847d3353d7%3A0x6a585af1f362dadb!2sHindustan%20Institute%20of%20Technology%20%26%20Science!5e0!3m2!1sen!2sin!4v1615790550631!5m2!1sen!2sin"
+                        width="350" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe></p>
+            </div>
+
+            <div class="col-md-6">
+                <h2>Contact Us</h2>
+                <form id="form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="name" name="name" class="form-control" id="name" re placeholder="Your Full Name..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Your Email Address..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message </label>
+                        <textarea class="form-control" name="message" id="message" required></textarea>
+                    </div>
+                    <input type="submit" id="button" value="Send" class="btn btn-warning btn-lg btn-block">
+                </form>
+            </div>
+
+        </div>
+    </div>
+    <hr>
+
+
+    <div class="logo-end container">
+        <img src="img/logo.png" class="img-fluid">
+    </div>
+
+
+    <div>
+        <footer>
+            <div class="footer-bottom ">
+                <ul class="socials">
+                    <li><a href="https://www.facebook.com/hitsrotaract/"><i class="fa fa-facebook"></i></a></li>
+                    <li><a href="https://instagram.com/rachindustanuniversity?utm_medium=copy_link"><i class="fa fa-instagram"></i></a></li>
+                    <li><a href="https://youtube.com/channel/UCBZNIUVZhpSMi5bUJRTIkxw"><i class="fa fa-youtube"></i></a></li>
+                </ul>
+                <p>copyright &copy;2021 Rotaract Club Of Hindustan University....</p>
+            </div>
+        </footer>
+    </div>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("user_m90AseSSJkYtY2V1u4xGI");
+        })();
+    </script>
+    <script>
+        const btn = document.getElementById('button');
+        document.getElementById('form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            btn.value = 'Sending...';
+            const serviceID = 'default_service';
+            const templateID = 'acharya';
+            emailjs.sendForm(serviceID,
+                templateID, this).then(() => {
+                btn.value = 'Send';
+                window.location.href = "reply.html";
+            }, (err) => {
+                btn.value = 'Send';
+                alert(JSON.stringify(err));
+            });
+        });
+    </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous">
+    </script>
+
+    <script src="js/script.js"></script>
+    <!-- <script>
+        $.each($('*'), function() {
+            if ($(this).width() > $('body').width()) {
+                console.log("Wide Element: ", $(this), "Width: ",
+                    $(this).width());
+            }
+        });
+    </script> -->
+
+</body>
+
+</html>
